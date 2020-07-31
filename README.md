@@ -8,5 +8,7 @@ Simiplify AWS credential updates to TFC/TFE organization workspaces
 - The second line sets an alias command for interactive execution or automation (e.g., cron) to retrieve new AWS credentials and push them to TFE sensitive environment variables within each workspace returned from the prior line.
 3. Each execution will collect entirely new credentials and push them to each workspace. Credentials are valid for the duration set in the company policy.
 
+### To Do:
+1. Rethink logic. This creates TFE AWS Env Varialbles in each workspace, regardless of whether they are needed or not. Kinda overkill, but I don't think it'll hurt anything. Is there something we can key off of during the API query?
 ---
 Tested against [Oh My Zsh](ohmyz.sh) on OSX 10.15.6 and Terraform Cloud
